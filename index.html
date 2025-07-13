@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style-index.css">
+    <link rel="website icon" href="./src/assets/img/icons/icon-fiap.png">
+    <title>login</title>
+</head>
+<body>
+    
+    <main id="hero">
+
+        <section id="wrapper">
+            <form action="">
+                <div id="logo">
+                    <img src="./src/assets/img/logo.png" alt="">
+                </div>
+                <h2>Login</h2>
+                <p id="errorMsg" style="color:red; text-align: center; font-size: 15px; margin-top: 10px; margin-bottom: -10px;"></p>
+                <article class="input-box">
+                    <input id="user" type="text" placeholder="RM" required>
+                    <i id='bx bxs-user'></i>
+                </article>
+                <article class="input-box">
+                    <input id="password" type="password" placeholder="Senha" required>
+                    <i id='bx bxs-lock-alt'></i>
+                </article> 
+                <section id="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Esqueceu a senha?</a>
+                </section>
+                <button type="submit" id="btn">Entrar</button>
+                <section id="register-link">
+                    <p>Não tem uma conta? <a href="#">Criar</a></p>
+                </section>
+            </form>
+            
+        </section>
+    </main>
+
+    <script src="./src/js/login.js"></script>
+</body>
+</html>
