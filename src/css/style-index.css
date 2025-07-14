@@ -59,17 +59,17 @@ body {
 
 #logo{
     display: flex;
-    justify-content: end;
+    justify-content: center;
 }
 
 #logo img{
     display: flex;
-    width: 90px;
+    width: 30px;
 }
 
 #wrapper h2{
     margin-top: 15px;
-    font-size: var(--font-size-title2);
+    font-size: var(--font-size);
     font-weight: 200;
     text-align: center;
 }
@@ -98,11 +98,12 @@ body {
 }
 
 .input-box i{
+    color: var(--light-color);
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #wrapper #remember-forgot{

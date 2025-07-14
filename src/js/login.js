@@ -17,6 +17,7 @@ document.getElementById("btn").addEventListener("click", function () {
                 window.location.href = "./src/pages/home.html";
             } else {
                 document.getElementById("errorMsg").innerText = "Usuário ou senha inválidos.";
+                console.log("tente RM:564929, Pass:leo1234")
             }
         })
         .catch(error => {

@@ -1,9 +1,10 @@
 <div align="center">
 
-# 📰 FIAP | news
+<img src="./src/assets/img/logo.png" width="150px">
 </div>
 
-## Em desenvolvimento!
+📎acesse [F.com](https://leoosilvp.github.io/F/)
 
-📎acesse [Fiap news!](https://leoosilvp.github.io/FIAPnews/)
+<p> rede social destinada a alunos FIAP com UX baseada no antigo twitter. </p>
 
+<p align="center"> Em desenvolvimento! </p>
