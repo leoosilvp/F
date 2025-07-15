@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./src/assets/img/logo.png" width="150px">
+<img src="./src/assets/img/8.png" width="300px">
 </div>
 
 📎acesse [F.com](https://leoosilvp.github.io/F/)

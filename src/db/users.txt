@@ -1,2 +1,3 @@
 564929:leo1234
 572391:admin1234
+admin:admin
