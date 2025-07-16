@@ -7,35 +7,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="website icon" href="../assets/img/icons/icon-fiap-light.png">
-    <title>Home - FIAP | evo</title>
+    <title>Home - FIAP | kōdo</title>
 </head>
 
 <body>
     <main id="hero">
-        <aside id="aside">
-            
-            <section id="profile">
-                <a href="#"><img src="../assets/img/img-profile/img-default.avif" alt="img-profile"></a>
-                <section id="user">
-                    <h1 id="name"><a href="#">Leonardo Silva</a></h1>
-                    <h2 id="user-name"><a href="#">@leeosilvp</a></h2>
+        <aside id="ctn-aside">
+            <section id="aside">
+                <section id="profile">
+                    <a href="#"><img src="../assets/img/img-profile/img-default.avif" alt="img-profile"></a>
+                    <section id="user">
+                        <h1 id="name"><a href="#">Leonardo Silva</a></h1>
+                        <h2 id="user-name"><a href="#">@leeosilvp</a></h2>
+                    </section>
+                    <a href="#"><i class="fa-solid fa-bars"></i></a>
                 </section>
-                <a href="#"><i class="fa-solid fa-bars"></i></a>
+
+                <nav>
+                    <ul>
+                        <li><a href="./home.html"><i class="fa-solid fa-home" style="margin-right: 20px;"></i>Home</a>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-newspaper" style="margin-right: 20px;"></i>The news</a>
+                        </li>
+                        <li><a href="#" target="_blank"><i class="fa-solid fa-bell"
+                                    style="margin-right: 20px;"></i>Notifications</a></li>
+                        <li><a href="https://www2.fiap.com.br/Aluno/Home" target="_blank"><i
+                                    class="fa-solid fa-address-book" style="margin-right: 20px;"></i>Portal do aluno</a>
+                        </li>
+                        <li><a href="https://fiap-csm.symplicity.com/" target="_blank"><i class="fa-solid fa-flask"
+                                    style="margin-right: 20px;"></i>Talent lab</a></li>
+                        <li><a href="https://on.fiap.com.br/" target="_blank"><i class="fa-solid fa-power-off"
+                                    style="margin-right: 20px;"></i>Fiap on</a></li>
+                        <li><a href="#" target="_blank"><i class="fa-solid fa-bars"
+                                    style="margin-right: 20px;"></i>More</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <button type="submit" id="btn-post">Post</button>
             </section>
-
-            <nav>
-                <ul>
-                    <li><a href="./home.html"><i class="fa-solid fa-home" style="margin-right: 20px;"></i>Home</a></li>
-                    <li><a href="#"><i class="fa-solid fa-newspaper" style="margin-right: 20px;"></i>The news</a></li>
-                    <li><a href="#" target="_blank"><i class="fa-solid fa-bell" style="margin-right: 20px;"></i>Notifications</a></li>
-                    <li><a href="https://www2.fiap.com.br/Aluno/Home" target="_blank"><i class="fa-solid fa-address-book" style="margin-right: 20px;"></i>Portal do aluno</a></li>
-                    <li><a href="https://fiap-csm.symplicity.com/" target="_blank"><i class="fa-solid fa-flask" style="margin-right: 20px;"></i>Talent lab</a></li>
-                    <li><a href="https://on.fiap.com.br/" target="_blank"><i class="fa-solid fa-power-off" style="margin-right: 20px;"></i>Fiap on</a></li>
-                    <li><a href="#" target="_blank"><i class="fa-solid fa-bars" style="margin-right: 20px;"></i>More</a></li>
-                </ul>
-            </nav>
-
-            <button type="submit" id="btn-post">Post</button>
 
             <section id="footer-aside">
                 <a href="#">Contact</a>
@@ -47,19 +57,14 @@
                 <a href="#">Terms</a>
                 <p>|</p>
                 <a href="#">More</a>
-                <p>&copy;2025 FIAP | e.v.o</p>
+                <p>&copy;2025 FIAP | kōdo</p>
             </section>
         </aside>
 
         <section id="content">
             <article id="header">
-                <a href="./home.html"><img src="../assets/img/8.png" alt="FIAP | e.v.o"></a>
+                <a href="./home.html"><img src="../assets/img/logo-kodo.png" alt="Kōdo"></a>
             </article>
-
-            <section id="search">
-                <input type="text" placeholder="search...">
-                <button id="btn-search"><i class="fa-solid fa-search"></i></button>
-            </section>
 
             <section id="ctn-publish">
                 <article id="publish">
@@ -79,14 +84,80 @@
                 </section>
             </section>
 
+            <section id="search">
+                <input type="text" placeholder="search...">
+                <button id="btn-search"><i class="fa-solid fa-search"></i></button>
+            </section>
+
             <section id="feed">
                 <article class="post">
+                    <div class="user">
+                        <img src="../assets/img/img-profile/img-default.avif" alt="img-profile">
+                        <section class="info-user">
+                            <h1 id="name"><a href="#">Leonardo Silva</a></h1>
+                            <h2 id="user-name"><a href="#">@leeosilvp</a></h2>
+                        </section>
+                    </div>
 
+                    <div class="card-description">
+                        <h2>meu perfil no HitHub.. <br><a
+                                href="https://github.com/leoosilvp">https://github.com/leoosilvp</a></h2>
+                    </div>
+
+                    <div class="img-post">
+                        <img src="../assets/img/img-post/Captura de tela 2025-07-15 211948.jpg" alt="">
+                    </div>
                 </article>
-            </section>  
+
+                <article class="post">
+                    <div class="user">
+                        <img src="../assets/img/img-profile/img-default.avif" alt="img-profile">
+                        <section class="info-user">
+                            <h1 id="name"><a href="#">Leonardo Silva</a></h1>
+                            <h2 id="user-name"><a href="#">@leeosilvp</a></h2>
+                        </section>
+                    </div>
+
+                    <div class="card-description">
+                        <h2>testando novos formatos de post.</h2>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="user">
+                        <img src="../assets/img/img-profile/img-default.avif" alt="img-profile">
+                        <section class="info-user">
+                            <h1 id="name"><a href="#">Leonardo Silva</a></h1>
+                            <h2 id="user-name"><a href="#">@leeosilvp</a></h2>
+                        </section>
+                    </div>
+
+                    <div class="card-description">
+                        <h2>acho q da p levar isso p frente...</h2>
+                    </div>
+
+                    <div class="img-post">
+                        <img src="../assets/img/img-post/Captura de tela 2025-07-15 213835.jpg" alt="">
+                    </div>
+                </article>
+            </section>
         </section>
 
-       
+        <aside id="aside-right">
+            <section id="card-aside-ad">
+
+            </section>
+
+            <section id="card-aside-news">
+
+            </section>
+
+            <section id="card-aside-conect">
+
+            </section>
+        </aside>
+
+
 
 
     </main>
