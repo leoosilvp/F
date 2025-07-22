@@ -1,27 +1,64 @@
-document.getElementById("btn").addEventListener("click", function () {
-    const username = document.getElementById("user").value.trim();
-    const password = document.getElementById("password").value.trim();
+//verificar se tem o RM salvo
+window.addEventListener("DOMContentLoaded", function () {
+    const savedRM = localStorage.getItem("savedRM");
+    if (savedRM) {
+        document.getElementById("user").value = savedRM;
+        document.getElementById("remember").checked = true;
+    }
+});
 
-    fetch('./src/db/users.txt')
-        .then(response => response.text())
-        .then(data => {
-            const lines = data.split('\n');
-            const users = lines.map(line => {
-                const [user, pass] = line.trim().split(':');
-                return { user, password: pass };
-            });
+document.getElementById("btn").addEventListener("click", function (event) {
+    event.preventDefault();
 
-            const validUser = users.find(user => user.user === username && user.password === password);
+    const rm = document.getElementById("user").value.trim();
+    const senha = document.getElementById("password").value.trim();
+    const rememberMe = document.getElementById("remember");
+    const errorMsg = document.getElementById("errorMsg");
 
-            if (validUser) {
+    // Validação do RM
+    if (!/^\d{6}$/.test(rm)) {
+        errorMsg.textContent = "Formato de RM inválido.";
+        return;
+    }
+
+    // Validação da senha
+    if (senha.length < 8) {
+        errorMsg.textContent = "A senha deve ter no mínimo 8 caracteres.";
+        return;
+    }
+
+    // Verifica credenciais
+    fetch("./db/users.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao carregar o banco de dados.");
+            }
+            return response.json();
+        })
+        .then(users => {
+            const userFound = users.find(user => user.rm === rm && user.senha === senha);
+
+            if (userFound) {
+                errorMsg.textContent = "";
+
+                // salva ou remove o RM do localStorage
+                if (rememberMe.checked) {
+                    localStorage.setItem("savedRM", rm);
+                } else {
+                    localStorage.removeItem("savedRM");
+                }
+
                 window.location.href = "./src/pages/home.html";
             } else {
-                document.getElementById("errorMsg").innerText = "Usuário ou senha inválidos.";
-                console.log("tente RM:564929, Pass:leo1234")
+                errorMsg.textContent = "RM ou senha inválidos.";
+                document.getElementById("password").value = "";
             }
         })
         .catch(error => {
-            console.error("Erro ao carregar o banco de dados:", error);
-            document.getElementById("errorMsg").innerText = "Erro interno. Tente novamente.";
+            console.error("Erro:", error);
+            errorMsg.textContent = "Erro ao verificar login.";
         });
 });
+
+
+localStorage.clear();

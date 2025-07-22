@@ -1,105 +1,82 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const carrossel = document.querySelector('.carrossel');
-    const cards = document.querySelectorAll('.card');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    const indicatorsContainer = document.querySelector('.carrossel-indicators');
+document.addEventListener("DOMContentLoaded", () => {
+    const publishInput = document.querySelector('#publish input');
+    const publishButton = document.querySelector('#btn-publish button');
+    const feed = document.getElementById('feed');
 
-    const totalCards = cards.length;
-    let currentIndex = 0;
-    let visibleCards = 5; // Número de cards visíveis (central + 2 de cada lado)
+    // simula dados do usuário logado
+    const userName = "Leonardo Silva";
+    const userHandle = "@leeosilvp";
+    const userImage = "../assets/img/img-profile/img-default.avif";
 
-    // Criar indicadores
-    function createIndicators() {
-        for (let i = 0; i < totalCards; i++) {
-            const indicator = document.createElement('div');
-            indicator.classList.add('carrossel-indicator');
-            if (i === currentIndex) indicator.classList.add('active');
-
-            indicator.addEventListener('click', () => {
-                currentIndex = i;
-                updatecarrossel();
-            });
-
-            indicatorsContainer.appendChild(indicator);
-        }
-    }
-
-    // Posicionar os cards no carrossel
-    function positionCards() {
-        const centerIndex = Math.floor(visibleCards / 2);
-
-        cards.forEach((card, index) => {
-            // Calcular a posição relativa ao card central
-            let position = (index - currentIndex + centerIndex) % totalCards;
-            if (position < 0) position += totalCards;
-
-            // Definir estilos baseados na posição
-            if (position === centerIndex) {
-                // Card central
-                card.style.transform = 'translateX(0) scale(1)';
-                card.style.zIndex = '10';
-                card.style.opacity = '1';
-            } else if (position === centerIndex - 1 || position === centerIndex + 1) {
-                // Cards adjacentes
-                const direction = position === centerIndex - 1 ? -1 : 1;
-                card.style.transform = `translateX(${direction * 150}px) scale(0.9)`;
-                card.style.zIndex = '5';
-                card.style.opacity = '1';
-            } else if (position === centerIndex - 2 || position === centerIndex + 2) {
-                // Cards mais distantes
-                const direction = position === centerIndex - 2 ? -1 : 1;
-                card.style.transform = `translateX(${direction * 300}px) scale(0.8)`;
-                card.style.zIndex = '1';
-                card.style.opacity = '0.6';
-            } else {
-                // Cards não visíveis
-                card.style.transform = 'translateX(0) scale(0)';
-                card.style.zIndex = '0';
-                card.style.opacity = '0';
-            }
+    // Função para formatar data/hora
+    function getFormattedDateTime() {
+        const now = new Date();
+        return now.toLocaleString("pt-BR", {
+            dateStyle: "short",
+            timeStyle: "short"
         });
     }
 
-    // Atualizar indicadores
-    function updateIndicators() {
-        const indicators = document.querySelectorAll('.carrossel-indicator');
-        indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === currentIndex);
+    // Função para criar o HTML de um post
+    function createPostElement({ content, dateTime }) {
+        const post = document.createElement('article');
+        post.classList.add('post');
+        post.innerHTML = `
+            <div class="user">
+                <img src="${userImage}" alt="img-profile">
+                <section class="info-user">
+                    <h1 id="name"><a href="#">${userName}</a></h1>
+                    <h2 id="user-name"><a href="#">${userHandle}</a></h2>
+                </section>
+            </div>
+
+            <div class="card-description">
+                <h2>${content}</h2>
+                <p style="font-size: 12px; color: gray; margin-top: 5px;">${dateTime}</p>
+            </div>
+        `;
+        return post;
+    }
+
+    // Função para salvar os posts no localStorage
+    function savePosts(posts) {
+        localStorage.setItem("fiap_posts", JSON.stringify(posts));
+    }
+
+    // Função para carregar os posts salvos
+    function loadPosts() {
+        const posts = JSON.parse(localStorage.getItem("fiap_posts")) || [];
+        posts.reverse().forEach(post => {
+            const postElement = createPostElement(post);
+            feed.prepend(postElement);
         });
     }
 
-    // Atualizar o carrossel
-    function updatecarrossel() {
-        positionCards();
-        updateIndicators();
-    }
+    // Evento de publicação
+    publishButton.addEventListener('click', () => {
+        const content = publishInput.value.trim();
+        if (content === "") return;
 
-    // Navegação
-    function goToPrev() {
-        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-        updatecarrossel();
-    }
+        const dateTime = getFormattedDateTime();
 
-    function goToNext() {
-        currentIndex = (currentIndex + 1) % totalCards;
-        updatecarrossel();
-    }
+        const newPostData = {
+            content,
+            dateTime
+        };
 
-    // Event listeners
-    prevBtn.addEventListener('click', goToPrev);
-    nextBtn.addEventListener('click', goToNext);
+        // Criar e exibir no feed
+        const newPost = createPostElement(newPostData);
+        feed.prepend(newPost);
 
-    // Navegação por teclado
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') {
-            goToPrev();
-        } else if (e.key === 'ArrowRight') {
-            goToNext();
-        }
+        // Salvar no localStorage
+        const savedPosts = JSON.parse(localStorage.getItem("fiap_posts")) || [];
+        savedPosts.push(newPostData);
+        savePosts(savedPosts);
+
+        publishInput.value = "";
     });
 
-    // Inicialização
-    createIndicators();
-    updatecarrossel();
+    // Ao carregar a página, mostrar os posts salvos
+    loadPosts();
 });
+

@@ -192,7 +192,7 @@ nav ul li a:hover {
 #content {
     display: flex;
     flex-direction: column;
-    width: 550px;
+    width: 650px;
     height: 100vh;
     box-shadow: 1px 0px 0px 0px #3f3f3f;
     overflow: auto;
@@ -219,7 +219,7 @@ nav ul li a:hover {
 
 #header img {
     display: flex;
-    width: 70px;
+    width: 40px;
 }
 
 #search {
@@ -382,6 +382,10 @@ nav ul li a:hover {
 
 .card-description h2 {
     font-weight: 400;
+}
+
+.card-description a {
+    color: var(--primary-color);
 }
 
 .img-post {

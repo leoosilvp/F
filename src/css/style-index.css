@@ -41,7 +41,7 @@ body {
     height: 100vh;
     background-image: url(../assets/img/fundo.gif);
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     color: var(--light-color);
 }
@@ -62,20 +62,9 @@ body {
     justify-content: end;
 }
 
-.post {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.user img {
-    display: flex;
-    width: 40px;
-}
-
 #logo img {
     display: flex;
-    width: 110px;
+    width: 70px;
 }
 
 #wrapper h2 {
@@ -174,4 +163,21 @@ body {
 #wrapper #register-link p a:hover {
     color: var(--primary-color);
     text-decoration: underline;
+}
+
+
+@media (width < 768px) {
+
+    #wrapper {
+        width: 350px;
+    }
+
+}
+
+@media (width < 620px) {
+
+    #wrapper {
+        width: 340px;
+    }
+
 }
