@@ -206,7 +206,7 @@ nav ul li a:hover {
 
 #content::-webkit-scrollbar-thumb {
     border-radius: var(--border);
-    background: #555555;
+    background: #53535365;
 }
 
 #header {
@@ -418,165 +418,65 @@ nav ul li a:hover {
 #card-aside-ad {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 150px;
     border: 1px solid #3f3f3f;
     border-radius: 15px;
 }
 
+
+
 #card-aside-news {
     display: flex;
     flex-direction: column;
     height: 420px;
+    padding: 15px;
     border: 1px solid #3f3f3f;
     border-radius: 15px;
-}
-
-#card-aside-conect {
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-    border: 1px solid #3f3f3f;
-    border-radius: 15px;
-}
-
-
-
-
-
-/* footer */
-footer {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    background: var(--gradient-color);
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 0px 20px 2px var(--dark-color2);
-    color: var(--light-color);
-}
-
-footer .ctn-footer {
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
-.ctn-equipe {
-    display: flex;
-}
-
-.social-links {
-    display: flex;
+    overflow: auto;
     gap: 15px;
 }
 
-.social-links a {
-    text-decoration: none;
+#card-aside-news::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+#card-aside-news::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+#card-aside-news h1{
+    font-size: var(--font-size1);
+    font-weight: 500;
+}
+
+.card-news a{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--dark-color-2);
-    backdrop-filter: blur(5px);
-    color: var(--light-color);
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    border-radius: var(--border);
+    background: #171717;
+    cursor: pointer;
+    text-decoration: none;
     transition: var(--transition);
 }
 
-.social-links a:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
+.card-news a:hover{
+    background: #232323;
 }
 
-footer .equipe {
-    margin: 15px;
-    list-style: none;
-}
-
-footer .equipe li a {
-    text-decoration: none;
+.card-news h2{
+    font-size: var(--font-size2);
     font-weight: 600;
-    color: var(--light-color);
+    color: #d9d9d9;
 }
 
-.direitos span a {
-    text-decoration: none;
-    color: var(--light-color);
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.direitos span a:hover {
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-
-
-
-/* responsividade */
-
-@media(width <=1720px) {
-
-    #invite {
-        margin-right: 0px;
-    }
-
-    #video video {
-        width: 900px;
-    }
-
-    #invite h2 {
-        margin-top: 20px;
-    }
-
-    .btn {
-        margin-top: 40px;
-    }
-
-}
-
-
-@media(width <=1520px) {
-
-    #invite {
-        margin: 0;
-    }
-
-    #video video {
-        width: 700px;
-    }
-
-    #invite h1 {
-        font-size: var(--font-size-title2);
-    }
-
-    .btn {
-        margin-top: 40px;
-    }
-
-}
-
-
-
-@media(width <=1320px) {
-    #video video {
-        display: none;
-    }
-
-    #invite {
-        margin: 40px;
-    }
-
-    #invite h2 {
-        margin-top: 20px;
-    }
-
-    .btn {
-        margin-top: 40px;
-    }
-
-
+.card-news h3{
+    margin-top: 2px;
+    font-size: var(--font-size4);
+    font-weight: 400;
+    color: #bababa;
 }
