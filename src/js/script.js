@@ -85,9 +85,9 @@ const overlay = document.getElementById('ctn-section-post');
 const btnFechar = document.getElementById('close-section-post');
 
 btnAbrir.addEventListener('click', () => {
-  overlay.style.display = 'flex';
+    overlay.style.display = 'flex';
 });
 
 btnFechar.addEventListener('click', () => {
-  overlay.style.display = 'none';
+    overlay.style.display = 'none';
 });
