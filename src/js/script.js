@@ -80,3 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
     loadPosts();
 });
 
+const btnAbrir = document.getElementById('btn-post');
+const overlay = document.getElementById('ctn-section-post');
+const btnFechar = document.getElementById('close-section-post');
+
+btnAbrir.addEventListener('click', () => {
+  overlay.style.display = 'flex';
+});
+
+btnFechar.addEventListener('click', () => {
+  overlay.style.display = 'none';
+});
