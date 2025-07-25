@@ -42,6 +42,14 @@ hr {
     margin-bottom: 60px;
 }
 
+#blur {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #00000023;
+    backdrop-filter: blur(5px);
+}
 
 body {
     background: #000000;
@@ -129,6 +137,50 @@ header {
     text-decoration: none;
     color: var(--light-color);
     cursor: pointer;
+}
+
+#ctn-change-profile {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 270px;
+    display: none;
+}
+
+#change-profile {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 100%;
+    padding: 10px;
+    background: #000;
+    border: 1px solid var(--color-line);
+    border-radius: 0px 10px 10px 10px;
+    box-shadow: 0px 0px 20px 10px #000;
+    gap: 10px;
+}
+
+#change-profile a {
+    width: 100%;
+    border-radius: var(--border);
+    padding: 7px;
+    text-decoration: none;
+    color: var(--light-color);
+    transition: var(--transition);
+}
+
+#change-profile #log-out {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-weight: 500;
+    width: fit-content;
+    height: 25px;
+    background: #ca0000;
+}
+
+#change-profile a:hover {
+    background: var(--dark-color1);
 }
 
 nav {

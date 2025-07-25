@@ -80,14 +80,37 @@ document.addEventListener("DOMContentLoaded", () => {
     loadPosts();
 });
 
-const btnAbrir = document.getElementById('btn-post');
-const overlay = document.getElementById('ctn-section-post');
-const btnFechar = document.getElementById('close-section-post');
 
-btnAbrir.addEventListener('click', () => {
-    overlay.style.display = 'flex';
-});
 
-btnFechar.addEventListener('click', () => {
-    overlay.style.display = 'none';
-});
+// fazer abrir e fechar a seção de post
+var btnOpenSection = document.getElementById('btn-post');
+var btnCloseSection = document.getElementById('close-section-post');
+var displayBlur = document.getElementById('blur');
+
+btnOpenSection.addEventListener('click', () => {
+    var displaySection = document.getElementById('ctn-section-post');
+    displayBlur.style.display = "flex";
+    displaySection.style.display = "flex";
+})
+
+btnCloseSection.addEventListener('click', () => {
+    var displaySection = document.getElementById('ctn-section-post');
+    displayBlur.style.display = "none";
+    displaySection.style.display = "none";
+})
+
+// fazer abrir e fechar a seção de change-profile
+btnOpenSection = document.getElementById('btn-change-profile');
+btnCloseSection = document.getElementById('blur')
+
+btnOpenSection.addEventListener('click', () => {
+    var displaySection = document.getElementById('ctn-change-profile');
+    displayBlur.style.display = "flex";
+    displaySection.style.display = "flex";
+})
+
+btnCloseSection.addEventListener('click', () => {
+    var displaySection = document.getElementById('ctn-change-profile');
+    displayBlur.style.display = "none";
+    displaySection.style.display = "none";
+})
