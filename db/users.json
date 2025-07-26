@@ -1,13 +1,10 @@
 [
     {
-        "name": "Leonardo Silva",
-        "user_name": "@leeosilvp",
-        "email": "leo965679@gmail.com",
         "rm": "564929",
-        "senha": "leo1234567"
-    },
-    {
-        "rm": "123456",
-        "senha": "876543210"
+        "password": "leo1234567",
+        "email": "leo965679@gmail.com",
+        "user_name": "@leeosilvp",
+        "name": "Leonardo Silva",
+        "verified": "True"
     }
 ]

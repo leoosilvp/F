@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="website icon" href="../assets/img/icons/icon-fiap-light.png">
-    <title>Profile | FIAP</title>
+    <title>Profile - FIAP</title>
 </head>
 
 <body>
+
+    <div id="blur"></div>
+
     <main id="hero">
         <aside id="ctn-aside">
             <section id="aside">
@@ -21,7 +24,15 @@
                         <h1 id="name"><a href="./profile.html">Leonardo Silva</a></h1>
                         <h2 id="user-name"><a href="./profile.html">@leeosilvp</a></h2>
                     </section>
-                    <a href="#"><i class="fa-solid fa-bars"></i></a>
+                    <a id="btn-change-profile"><i class="fa-solid fa-bars"></i></a>
+                </section>
+
+                <section id="ctn-change-profile">
+                    <article id="change-profile">
+                        <a href="#"><i class="fa-solid fa-users"></i> Trocar de conta</a>
+                        <a href="#"><i class="fa-solid fa-user-plus"></i> Adicionar conta</a>
+                        <a href="#" id="log-out">Log-out <i class="fa-solid fa-right-from-bracket"></i></a>
+                    </article>
                 </section>
 
                 <nav>
@@ -30,6 +41,9 @@
                         </li>
                         <li><a href="https://leoosilvp.github.io/FIAPnews/"><i class="fa-solid fa-newspaper"
                                     style="margin-right: 20px;"></i>FIAP news</a>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-comments" style="margin-right: 20px;"></i>Bate-papo
+                                <span>Beta</span></a>
                         </li>
                         <li><a href="#" target="_blank"><i class="fa-solid fa-bell"
                                     style="margin-right: 20px;"></i>Notifications</a></li>
@@ -40,13 +54,31 @@
                                     style="margin-right: 20px;"></i>Talent lab</a></li>
                         <li><a href="https://on.fiap.com.br/" target="_blank"><i class="fa-solid fa-power-off"
                                     style="margin-right: 20px;"></i>Fiap on</a></li>
-                        <li><a href="#" target="_blank"><i class="fa-solid fa-bars"
-                                    style="margin-right: 20px;"></i>More</a>
+                        <li><a id="btn-more"><i class="fa-solid fa-bars" style="margin-right: 20px;"></i>More</a>
                         </li>
                     </ul>
                 </nav>
 
                 <button id="btn-post">Post</button>
+            </section>
+
+            <section id="ctn-more">
+                <nav>
+                    <ul>
+                        <li><a id="btn-fiap"><i class="fa-solid fa-caret-left" style="margin-right: 20px;"></i>FIAP</a>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-user-lock" style="margin-right: 20px;"></i>Privacy</a>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-user" style="margin-right: 20px;"></i>My account</a></li>
+                        <li><a href="#"><i class="fa-solid fa-file-invoice"
+                                    style="margin-right: 20px;"></i>Occurrences</a></li>
+                        <li><a href="#"><i class="fa-solid fa-people-roof" style="margin-right: 20px;"></i>Manage
+                                accounts</a></li>
+                        <li><a href="#"><i class="fa-solid fa-life-ring" style="margin-right: 20px;"></i>Support</a>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-gear" style="margin-right: 20px;"></i>Settings</a></li>
+                    </ul>
+                </nav>
             </section>
 
             <section id="footer-aside">
@@ -81,7 +113,7 @@
                     </section>
                 </article>
                 <article id="user-profile">
-                    <h1 id="name">Leonardo Silva</a></h1>
+                    <h1 id="name">Leonardo Silva <p id="verified"><i class="fa-solid fa-circle-check"></i></p></a></h1>
                     <h2 id="user-name">@leeosilvp</a></h2>
                 </article>
 
@@ -92,8 +124,8 @@
                 </section>
 
                 <section id="following-followers">
-                    <h2 id="following"><span>0</span> Seguindo</h2>
-                    <h2 id="followers"><span>0</span> Seguidores</h2>
+                    <h2><span id="following">0</span> Seguindo</h2>
+                    <h2><span id="followers">0</span> Seguidores</h2>
                 </section>
             </section>
 
@@ -102,7 +134,8 @@
                     <div class="user">
                         <img src="../assets/img/img-profile/img-default.avif" alt="img-profile">
                         <section class="info-user">
-                            <h1 id="name"><a href="./profile.html">Leonardo Silva</a></h1>
+                            <h1 id="name"><a href="./profile.html">Leonardo Silva <p id="verified"><i
+                                            class="fa-solid fa-circle-check"></i></p></a></h1>
                             <h2 id="user-name"><a href="./profile.html">@leeosilvp</a></h2>
                         </section>
                     </div>
@@ -121,7 +154,8 @@
                     <div class="user">
                         <img src="../assets/img/img-profile/img-default.avif" alt="img-profile">
                         <section class="info-user">
-                            <h1 id="name"><a href="./profile.html">Leonardo Silva</a></h1>
+                            <h1 id="name"><a href="./profile.html">Leonardo Silva <p id="verified"><i
+                                            class="fa-solid fa-circle-check"></i></p></a></h1>
                             <h2 id="user-name"><a href="./profile.html">@leeosilvp</a></h2>
                         </section>
                     </div>
@@ -135,7 +169,8 @@
                     <div class="user">
                         <img src="../assets/img/img-profile/img-default.avif" alt="img-profile">
                         <section class="info-user">
-                            <h1 id="name"><a href="./profile.html">Leonardo Silva</a></h1>
+                            <h1 id="name"><a href="./profile.html">Leonardo Silva <p id="verified"><i
+                                            class="fa-solid fa-circle-check"></i></p></a></h1>
                             <h2 id="user-name"><a href="./profile.html">@leeosilvp</a></h2>
                         </section>
                     </div>
@@ -157,7 +192,9 @@
                     <div class="user">
                         <img src="../assets/img/img-profile/img-default.avif" alt="img-profile">
                         <section class="info-user">
-                            <h1 id="name"><a href="#">Leonardo Silva</a></h1>
+                            <h1 id="name"><a href="#">Leonardo Silva <p id="verified"><i
+                                            class="fa-solid fa-circle-check"></i>
+                                    </p></a></h1>
                             <h2 id="user-name"><a href="#">@leeosilvp</a></h2>
                         </section>
                     </div>
@@ -210,7 +247,7 @@
             </section>
         </aside>
     </main>
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
 </body>
 
 </html>

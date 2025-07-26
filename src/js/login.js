@@ -11,7 +11,7 @@ document.getElementById("btn").addEventListener("click", function (event) {
     event.preventDefault();
 
     const rm = document.getElementById("user").value.trim();
-    const senha = document.getElementById("password").value.trim();
+    const password = document.getElementById("password").value.trim();
     const rememberMe = document.getElementById("remember");
     const errorMsg = document.getElementById("errorMsg");
 
@@ -22,7 +22,7 @@ document.getElementById("btn").addEventListener("click", function (event) {
     }
 
     // Validação da senha
-    if (senha.length < 8) {
+    if (password.length < 8) {
         errorMsg.textContent = "A senha deve ter no mínimo 8 caracteres.";
         return;
     }
@@ -36,7 +36,7 @@ document.getElementById("btn").addEventListener("click", function (event) {
             return response.json();
         })
         .then(users => {
-            const userFound = users.find(user => user.rm === rm && user.senha === senha);
+            const userFound = users.find(user => user.rm === rm && user.password === password);
 
             if (userFound) {
                 errorMsg.textContent = "";
@@ -61,4 +61,3 @@ document.getElementById("btn").addEventListener("click", function (event) {
 });
 
 
-localStorage.clear();
