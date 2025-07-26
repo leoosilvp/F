@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const newPost = createPostElement(newPostData);
         feed.prepend(newPost);
 
-        // Salvar no localStorage
+        // Salva no localStorage
         const savedPosts = JSON.parse(localStorage.getItem("fiap_posts")) || [];
         savedPosts.push(newPostData);
         savePosts(savedPosts);
@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         publishInput.value = "";
     });
 
-    // Ao carregar a página, mostrar os posts salvos
     loadPosts();
 });
 
@@ -114,3 +113,20 @@ btnCloseSection.addEventListener('click', () => {
     displayBlur.style.display = "none";
     displaySection.style.display = "none";
 })
+
+// fazer abrir e fechar a seção more
+btnOpenSection = document.getElementById('btn-more');
+btnCloseSection = document.getElementById('btn-fiap')
+displaySection = document.getElementById('ctn-more');
+displaySectionAside = document.getElementById('aside')
+
+btnOpenSection.addEventListener('click', () => {
+    displaySectionAside.style.display = 'none'
+    displaySection.style.display = 'flex'
+})
+
+btnCloseSection.addEventListener('click', () => {
+    displaySectionAside.style.display = 'flex';
+    displaySection.style.display = 'none';
+})
+
