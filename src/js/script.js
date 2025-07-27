@@ -1,4 +1,4 @@
-const publishInput = document.querySelector('#publish input');
+const publishInput = document.querySelector('#publish textarea');
 const publishButton = document.querySelector('#btn-publish button');
 const feed = document.getElementById('feed');
 
@@ -24,8 +24,9 @@ function createPostElement({ content, dateTime }) {
             <div class="user">
                 <img src="${userImage}" alt="img-profile">
                 <section class="info-user">
-                    <h1 id="name"><a href="#">${userName}</a></h1>
-                    <h2 id="user-name"><a href="#">${userHandle}</a></h2>
+                    <h1 id="name"><a href="./profile.html">${userName}<p id="verified"><i
+                                    class="fa-solid fa-circle-check"></i></p></a></h1>
+                    <h2 id="user-name"><a href="./profile.html">${userHandle}</a></h2>
                 </section>
             </div>
 
@@ -126,4 +127,4 @@ btnCloseSection.addEventListener('click', () => {
     displaySection.style.display = 'none';
 })
 
-// localStorage.clear();
+localStorage.clear();

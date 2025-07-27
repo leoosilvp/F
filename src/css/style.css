@@ -303,8 +303,7 @@ nav ul li a span {
     margin-top: 30px;
     max-width: 100%;
     min-width: 100%;
-    max-height: 380px;
-    min-height: 380px;
+    height: 200px;
     border: none;
     outline: none;
     padding: 10px 0px;
@@ -316,6 +315,20 @@ nav ul li a span {
 
 #content-section-post textarea::placeholder{
     font-weight: 700;
+}
+
+#content-section-post textarea::-webkit-resizer{
+    background: #000;
+}
+
+#content-section-post textarea::-webkit-scrollbar{
+    width: 7px;
+    background: #000;
+}
+
+#content-section-post textarea::-webkit-scrollbar-thumb{
+    border-radius: var(--border);
+    background: #232323;
 }
 
 #links-section-post{
@@ -458,13 +471,12 @@ nav ul li a span {
     border-radius: 50px;
 }
 
-#publish input {
+#publish textarea {
     margin: 10px;
     display: flex;
     padding: 10px;
     width: 100%;
     height: 40px;
-    border-radius: 50px;
     outline: none;
     border: none;
     color: var(--light-color);
@@ -473,7 +485,21 @@ nav ul li a span {
     background: transparent;
 }
 
-#publish input::placeholder {
+#publish textarea::-webkit-scrollbar{
+    background: #000;
+    width: 5px;
+}
+
+#publish textarea::-webkit-scrollbar-thumb{
+    border-radius: var(--border);
+    background: #232323;
+}
+
+#publish textarea::-webkit-resizer{
+    background: #000;
+}
+
+#publish textarea::placeholder {
     color: #555555;
 }
 
@@ -562,6 +588,7 @@ nav ul li a span {
 }
 
 .card-description h2 {
+    max-width: 600px;
     font-weight: 400;
 }
 
